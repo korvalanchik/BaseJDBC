@@ -14,8 +14,9 @@ public class Storage {
     private Storage() {
         try {
             String url = new Prefs().getString(Prefs.DB_JDBC_CONNECTION_URL);
-            String userName ="valerii";
-            connection = DriverManager.getConnection(url,"valerii","");
+            String pass = new Prefs().getString(Prefs.DB_PASSWORD);
+            String userName = new Prefs().getString(Prefs.DB_USERNAME);
+            connection = DriverManager.getConnection(url,userName,pass);
         } catch (SQLException e) {
             e.printStackTrace();
         }

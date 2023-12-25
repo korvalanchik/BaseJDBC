@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class DatabaseInitService {
-    public static final String INIT_DB_FILENAME = "initDB.sql";
     public void initDb(Storage storage) {
         try {
             String initDbFileName = new Prefs().getString(Prefs.INIT_DB_SQL_FILE_PATH);

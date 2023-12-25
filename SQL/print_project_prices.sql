@@ -1,4 +1,5 @@
-SELECT CONCAT( 'Project ', project.ID ) AS NAME, SUM( worker.SALARY )*( DATEDIFF( FINISH_DATE, START_DATE ) DIV 30 ) AS PRICE 
+SELECT CONCAT( 'Project ', project.ID ) AS NAME,
+       SUM( worker.SALARY )*( DATEDIFF( 'DAY',START_DATE,FINISH_DATE ) / 30 ) AS PRICE
 FROM
 	project
 	INNER JOIN project_worker ON project.ID = project_worker.PROJECT_ID
